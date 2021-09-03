@@ -1,6 +1,6 @@
-package guru.springframework.controllers;
+package guru.springframework.spring5jokesappv2.controllers;
 
-import guru.springframework.services.JokeService;
+import guru.springframework.spring5jokesappv2.services.JokeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +16,9 @@ public class JokeController {
 
     @RequestMapping({"/", ""})
     public String showJoke(Model model) {
+
         model.addAttribute("joke", jokeService.getJoke());
+        System.out.println(model.getAttribute("joke"));
 
         return "index";
     }

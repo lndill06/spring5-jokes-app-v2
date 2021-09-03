@@ -1,4 +1,4 @@
-package guru.springframework.services;
+package guru.springframework.spring5jokesappv2.services;
 
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 import org.springframework.stereotype.Service;
@@ -14,6 +14,10 @@ public class JokeServiceImpl implements JokeService {
 
     @Override
     public String getJoke() {
-        return chuckNorrisQuotes.getRandomQuote();
+
+        String joke = chuckNorrisQuotes.getRandomQuote();
+        System.out.println("In getJoke(): " + joke);
+
+        return joke;
     }
 }
